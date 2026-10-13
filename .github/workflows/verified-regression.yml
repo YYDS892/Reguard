@@ -1,0 +1,37 @@
+name: Verified regression
+
+on:
+  push:
+    paths:
+      - 'ci/packaging-788/**'
+      - '.github/workflows/verified-regression.yml'
+      - 'tests/test_ci_regression.py'
+  pull_request:
+    paths:
+      - 'ci/packaging-788/**'
+      - '.github/workflows/verified-regression.yml'
+      - 'tests/test_ci_regression.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  packaging-788:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13.5'
+      - name: Install test runtime
+        run: python -m pip install -r ci/packaging-788/requirements.txt
+      - name: Run frozen Agent regression
+        run: python ci/packaging-788/run_regression.py
+      - name: Validate CI runner rejection gates
+        run: python -m pytest tests/test_ci_regression.py -q -p no:cacheprovider

@@ -1,0 +1,6 @@
+.github/workflows/*.yml text eol=lf
+ci/packaging-788/*.py text eol=lf
+ci/packaging-788/*.txt text eol=lf
+ci/packaging-788/*.json text eol=lf
+ci/packaging-788/test_agent_candidate.py -text
+ci/packaging-788/wheels/*.whl -text
