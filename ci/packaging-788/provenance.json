@@ -1,0 +1,42 @@
+{
+  "asset_type": "ci-regression-from-verified-agent-candidate",
+  "fixture_id": "packaging-788",
+  "candidate_id": "3134cb219d5016f5",
+  "test_sha256": "3134cb219d5016f5eff7f968d3893ada2788d1cd0ea8c5c1d75e590c7634367e",
+  "candidate_origin": "agent_submitted_via_bounded_mcp",
+  "original_evidence_pack_manifest_sha256": "99855b23f41baec76bac4ce5aced361b185660ff612267e7522908d7db72ebbc",
+  "original_verification": {
+    "buggy_exit_codes": [
+      1,
+      1,
+      1
+    ],
+    "fixed_exit_codes": [
+      0,
+      0,
+      0
+    ],
+    "failure_fingerprint_matches": true,
+    "event_count": 8
+  },
+  "upstream": {
+    "project": "PyPA packaging",
+    "repository": "https://github.com/pypa/packaging",
+    "issue": "https://github.com/pypa/packaging/issues/788",
+    "fix_pull_request": "https://github.com/pypa/packaging/pull/794",
+    "fixed_commit": "cf2cbe2",
+    "license": "Apache-2.0 OR BSD-2-Clause",
+    "buggy_release": "24.1",
+    "fixed_release": "24.2"
+  },
+  "wheels": {
+    "24.1": {
+      "file": "packaging-24.1-py3-none-any.whl",
+      "sha256": "5b8f2217dbdbd2f7f384c41c628544e6d52f2d0f53c6d0c3ea61aa5d1d7ff124"
+    },
+    "24.2": {
+      "file": "packaging-24.2-py3-none-any.whl",
+      "sha256": "09abb1bccd265c01f4a3aa3f7a7db064b36514d2cba19a2f694fe6150451a759"
+    }
+  }
+}
